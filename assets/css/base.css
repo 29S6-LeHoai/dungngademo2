@@ -1,0 +1,363 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    --btn-color:#ee4d2d;
+    --red-color: #df2d2d;
+    --promery-color: #3ba66b;
+    --header-backgruond-color:#3ba66b;
+    --btn-oder:#00a859;
+    --btn-oder__hover:#e0741c;
+    --input-text-focus: #66afe9;
+    --text-hover:#9ad5f3;
+
+    --header-height:247px;
+    --header-navbar-height: 35px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-home-height:60px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 62.5%; /* để cài font 1 rem= 10px*/
+    color: #5a5a5a;
+    background-color: #ffffff;
+    line-height: 1.6rem;
+}
+
+
+.d--flex{
+    display: flex;
+}
+
+.justify--content--space--around{
+    justify-content: space-around !important;
+}
+/* Animation*/
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+
+@keyframes loginMenu{
+    from{
+        top: -10px;
+    }
+    to{
+        top: 0px;
+    }
+}
+
+
+
+/*******************************************/
+/*******************MODAL***********************/
+/************************************************/
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadeIn linear 0.3s;
+}
+
+/*lớp phủ*/
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+/*lớp viest conten*/
+.modal__body{
+    --growth-from:0.7;
+    --growth-to:1;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+}
+
+
+/* Phân cách '|'*/
+
+.separate::after{
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 2px solid rgb(168, 159, 159) ;
+    height: 15px;
+    right: -8px;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+
+/* text align */
+
+.text--align-left{
+    text-align: left;
+}
+
+.text--align-right{
+    text-align: right;
+}
+/****************************************************/
+/***************************Buttom Style*************/
+/***************************************************/
+
+.btn{
+    min-width: 140px;
+    height: 36px;
+    text-decoration: none;
+    border:none;
+    border-radius: 2px;
+    font-size: 1.6rem;
+    padding: 0 14px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn.btn--size-s{
+    min-width: 90px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 1.4rem;
+    display: inline-block;
+    text-align: center;
+    top: 50%;
+    right: 50%;
+}
+
+.btn.btn--size-m{
+    height: 36px;
+    max-width: 230px;
+    font-size: 1.6rem;
+    display: inline-block;
+    text-align: center;
+    top: 50%;
+    right: 50%;
+}
+
+.btn.btn--size-l{
+    height: 48px;
+    min-width: 100%;
+    font-size: 23px;
+    display: inline-block;
+}
+
+.btn.btn--normal:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--btn-color);
+}
+
+.btn.btn--primary:hover{
+    background-color: rgba(238,108,77,1.8);
+}
+
+
+.btn.btn--disabled{
+    cursor: not-allowed;
+    opacity: 0.7;
+    background-color: var(--btn-color);
+}
+
+.btn--price{
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 1.4rem;
+    display: inline-block;
+    text-align: center;
+}
+
+
+/* dường gạch dưới */
+
+.sepaten--line{
+    float: left;
+    width: 100%;
+    border-top: 1px dashed #837f7f;
+}
+
+/* text size */
+.text--size-s{
+    font-size: 110%;
+    width: auto;
+}
+
+.text--size-m{
+    font-size: 180%;
+    width: auto;
+}
+
+.text--size-l{
+    font-size: 250%;
+    width: auto;
+}
+
+
+.mr-16{
+    margin-right: 16px;
+}
+
+.mr-8{
+    margin-right: 8px;
+}
+
+.mt-8{
+    margin-top: 8px;
+}
+
+.mbt-8{
+    margin-bottom: 8px;
+}
+
+.pd-t--8{
+    padding-top: 8px;
+}
+
+.pd-bt--8{
+    padding-bottom: 8px;
+}
+
+
+
+/* Selection */
+
+.select-input{
+    height: 28px;
+    min-width: 200px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color:var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 0 1px rgba(0,0,0, 0.2);
+}
+
+.select-input:hover .select-input__list{
+    display: block;
+}
+
+.select-input__label{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.select-input__icon{
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+
+.select-input__list{
+    position:absolute;
+    top: 33px;
+    left: 0;
+    right: 0;
+    list-style: none;
+    background-color: var(--white-color);
+    border: 2px;
+    padding: 8px 8px;
+    box-shadow: 0 0 1px rgba(0,0,0, 0.2);
+    display: none;
+    z-index: 1;
+}
+
+.select-input__list::before{
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: 0;
+    height: 25px;
+    width: 100%;
+}
+
+.select-input__link{
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.3rem;
+    display: block;
+    padding: 5px;
+}
+
+.select-input__link:hover{
+    color: var(--text-hover);
+}
+
+/* pagination */
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination-item{
+    padding-right: 12px;
+}
+
+.pagination-item--active .pagination-item__link{
+    color: var(--white-color);
+    background-color: var(--btn-color);
+}
+
+.pagination-item--active .pagination-item__link:hover{
+    background-color: var(--btn-oder__hover);
+    
+}
+
+.pagination-item__link{
+    --heght:30px;
+    min-width: 40px;
+    display: block;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #939393;
+    text-align: center;
+    height: var(--heght);
+    line-height: var(--heght);
+    border-radius: 2px ;
+}
+
+.pagination-item__link-icon{
+    font-size: 1.6rem;
+}
+
